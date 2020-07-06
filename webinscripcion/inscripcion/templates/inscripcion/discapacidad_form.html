@@ -1,0 +1,266 @@
+{% extends 'inscripcion/basea.html' %}
+{% load static %}
+
+{% block title %} DISCPACIDAD {% endblock title %}
+
+
+{% block content %}
+  <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
+        <div class="container">
+          <div class="row align-items-end justify-content-center text-center">
+            <div class="col-lg-7">
+              <h2 class="mb-0">DATOS DEL ALUMNO</h2>
+              <p>Ingresar correctamente los datos que se le solicitan</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+
+    <div align="Center">
+      <img src="{% static 'core/images/SEV.png'%}" alt="Image" class="img-fluid">
+    </div>
+   
+    
+<!--INICIA EL FORMULARIO-->
+
+
+ <div class="contenido">
+
+     <h1 align="center">ESCUELA SECUNDARIA TECNICA N° 8 </h1>
+
+        <div class="contact-wrapper animated bounceInUp">
+            
+          <div class="contact-info">
+                <h4>ALUMNO</h4>
+               <p>
+                        <label>CURP</label>
+                        
+                        <input class="form-input" type="text" name="pk_curp" value="{{user.username}}" id="id_pk_curp" placeholder="CURP" required readonly>
+                                   
+
+                    </p>
+                     <p>
+                        <label>Nombre</label>
+                        <input class="form-input" name="curp_nombre" value="{{request.user.curp.curp_nombre}}" id="id_curp_nombre" type="text" placeholder="NOMBRE" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Paterno</label>
+                        <input class="form-input" name="curp_ap_paterno" value="{{request.user.curp.curp_ap_paterno}}" id="id_curp_ap_paterno" type="text" placeholder="APELLIDO PATERNO" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Materno</label>
+                        <input class="form-input" name="curp_ap_materno" value="{{request.user.curp.curp_ap_materno}}" id="id_curp_ap_materno" type="text" placeholder="APELLIDO MATERNO" readonly>
+                    </p>
+            </div>
+
+
+
+            <div class="contact-form">
+                <h3 align="center">DISCAPACIDADES</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <h3 align="center"> <input class="form-input" type="text" name="pk_curp" value="{{user.curp.pk_curp}}" id="id_pk_curp" placeholder="CURP" required readonly></h3>
+                    <br> <br> 
+                    <br> <br> 
+                    
+                  <p>
+                   autismo<input class="block4" name="discapacidad_tiene_autismo" type="checkbox" value="SI">
+                  </p>
+                 
+                  <p>
+                   Ceguera<input class="block4" name="discapacidad_tiene_ceguera" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Sordera<input class="block4" name="discapacidad_tiene_sordera" type="checkbox" value="SI">
+                  </p>
+                   <p>
+                   Baja visión<input class="block4" name="discapacidad_tiene_baja_vision" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                    Sordoceguera<input class="block4" name="discapacidad_tiene_sordoceguera" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Problema de conducta<input class="block4" name="discapacidad_tiene_problema_conducta" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Discapacidad múltiple<input class="block4" name="discapacidad_multiple" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Hipoacusia o baja audición<input class="block4" name="discapacidad_tiene_baja_audicion" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Mental (Bipolar, psicosis, etc)<input class="block4" name="discapacidad_mental" type="checkbox" value="SI">
+                  </p>
+                   <p>
+                   Problema de comunicación y lenguaje<input class="block4" name="discapacidad_tiene_problema_comunicacion_lenguaje" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Trastorno generalizado del desarrollo<input class="block4" name="discapacidad_tiene_transtorno_del_desarrollo" type="checkbox" value="SI" >
+                  </p>
+                  <p>
+                  Trastorno por déficit de atención e hiperactividad<input class="block4" name="discapacidad_tiene_transtorno_deficit_atencion_hiperactividad" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Discapacidad motriz (Parálisi, parálisis cerebral, amputaciones, etc)<input class="block4" name="discapacidad_motriz" type="checkbox" value="SI">
+                  </p>
+                  <p>
+                   Discapacidad intelectual (Síndrome de down, Déficit cognitivo global, etc)<input class="block4" name="discapacidad_intelectual" type="checkbox" value="SI">
+                  </p>
+
+
+
+                    <!--
+                    <p>
+                    <label for="autismo">¿Tiene autismo?</label>
+                    <select id="autismo" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="vision">¿Tiene baja visión?</label>
+                    <select id="vision" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="ceguera">¿Tiene ceguera?</label>
+                    <select id="ceguera" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="dintelectual">¿Tiene discapacidad intelectual?</label>
+                    <SELECT name="dintelectual" onchange="if(this.value=='Otro') {document.getElementById('Otro').disabled = false} else {document.getElementById('Otro').disabled = true}">
+                    <OPTION selected>....</OPTION>
+                    <OPTION value="No">No</OPTION>
+                    <OPTION value="Si">Síndrome de down</OPTION>
+                    <OPTION value="Si">Déficit cognitivo global</OPTION>
+                    <OPTION value="Otro">Otro</OPTION>
+                    </SELECT>
+                    <input class="Sexo" type="text" id="Otro" name="educacion"  placeholder="¿cuales?">
+                    </p>
+                    <p>
+                    <label for="dintelectual">¿Tiene discapacidad motriz?</label>
+                    <SELECT name="dintelectual" onchange="if(this.value=='Otroo') {document.getElementById('Otroo').disabled = false} else {document.getElementById('Otroo').disabled = true}">
+                    <OPTION selected>....</OPTION>
+                    <OPTION value="No">No</OPTION>
+                    <OPTION value="Si">Parálisis</OPTION>
+                    <OPTION value="Si">Parálisis cerebral</OPTION>
+                    <OPTION value="Si">Amputaciones</OPTION>
+                    <OPTION value="Otroo">Otro</OPTION>
+                    </SELECT>
+                    <input class="Sexo" type="text" id="Otroo" name="educacion"  placeholder="¿cuales?">
+                    </p>
+                     <p>
+                    <label for="dmultiple">¿Tiene Discapacidad múltiple?</label>
+                    <select id="dmultiple" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                     <p>
+                    <label for="hipoacusia">¿Tiene hipoacusia o baja audición?</label>
+                    <select id="hipoacusia" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                     <p>
+                    <label for="ceguera">¿Tiene discapacidad?</label>
+                    <select id="ceguera" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                     <p>
+                    <label for="dintelectual">¿Tiene discapacidad mental?</label>
+                    <SELECT name="dintelectual" onchange="if(this.value=='Otrooo') {document.getElementById('Otrooo').disabled = false} else {document.getElementById('Otrooo').disabled = true}">
+                    <OPTION selected>....</OPTION>
+                    <OPTION value="No">No</OPTION>
+                    <OPTION value="Si">Bipolar</OPTION>
+                    <OPTION value="Si">Psicosis</OPTION>
+                    <OPTION value="Otrooo">Otro</OPTION>
+                    </SELECT>
+                    <input class="Sexo" type="text" id="Otrooo" name="educacion"  placeholder="¿cuales?">
+                    </p>
+                    <p>
+                    <label for="comunicacion">¿Tiene problema de comunicación y lenguaje?</label>
+                    <select id="comunicacion" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="conducta">¿Tiene problema de conducta?</label>
+                    <select id="conducta" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="sordera">¿Tiene sordera?</label>
+                    <select id="sordera" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="sordoceguera">¿Tiene sordoceguera?</label>
+                    <select id="sordoceguera" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <p>
+                    <label for="desarrollo">¿Tiene trastorno generalizado del desarrollo?</label>
+                    <select id="desarrollo" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                    <div class="block4">
+                    <p>
+                    <label for="conducta">¿Tiene trastorno por déficit de atención e hiperactividad?</label>
+                    <select id="conducta" align='center' autofocus='true' name="menuparentesco" >
+                    <option selected>....</option>
+                    <option value="1">NO</option>
+                    <option value="2">SI</option>
+                    <input type="text"   class="Sexo" disabled=»disabled» >
+                    </p>
+                  </div>-->
+                
+
+                    <p class="block2">
+                        <button onClick="history.go(-1);">
+                            Volver
+                        </button>
+                    </p>
+                    <p class="block">
+                        <button type="submit" >
+                            Siguiente
+                        </button>
+                    </p>
+                    
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,110 @@
+{% extends 'inscripcion/basea.html' %}
+{% load static %}
+
+{% block title %} ALUMNO {% endblock title %}
+
+{% block head %}
+  <link rel="stylesheet"  href="{% static 'inscripcion/css/estiloalumno.css'%}">
+{% endblock head %}
+
+{% block content %}
+  <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
+        <div class="container">
+          <div class="row align-items-end justify-content-center text-center">
+            <div class="col-lg-7">
+              <h2 class="mb-0">DATOS DEL ALUMNO</h2>
+              <p>Ingresar correctamente los datos que se le solicitan</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+
+    <div align="Center">
+      <img src="{% static 'core/images/SEV.png'%}" alt="Image" class="img-fluid">
+    </div>
+   
+    
+<!--INICIA EL FORMULARIO-->
+
+
+ <div class="contenido">
+
+     <h1 align="center">ESCUELA SECUNDARIA TECNICA N° 8 </h1>
+      
+        <div class="contact-wrapper animated bounceInUp">
+            
+          <div class="contact-info">
+                <h4>ALUMNO</h4>
+                <p>
+                        <label>CURP</label>
+                        
+                        <input class="form-input" type="text" name="pk_curp" value="{{user.username}}" id="id_pk_curp" placeholder="CURP" required readonly>
+                                   
+
+                    </p>
+                     <p>
+                        <label>Nombre</label>
+                        <input class="form-input" name="curp_nombre" value="{{request.user.curp.curp_nombre}}" id="id_curp_nombre" type="text" placeholder="NOMBRE" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Paterno</label>
+                        <input class="form-input" name="curp_ap_paterno" value="{{request.user.curp.curp_ap_paterno}}" id="id_curp_ap_paterno" type="text" placeholder="APELLIDO PATERNO" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Materno</label>
+                        <input class="form-input" name="curp_ap_materno" value="{{request.user.curp.curp_ap_materno}}" id="id_curp_ap_materno" type="text" placeholder="APELLIDO MATERNO" readonly>
+                    </p>
+            </div>
+
+
+
+            <div class="contact-form">
+                <h3>DATOS GENERALES</h3>
+                <form method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                      <h3 align="center"> <input class="form-input" type="text" name="pk_curp" value="{{user.curp.pk_curp}}" id="id_pk_curp" placeholder="CURP" required readonly></h3>
+                    <br> <br> 
+                    <br> <br> 
+                  
+                   <P>
+                     <label>CURP</label>
+                      <input class="pdf" type="file" id="miInput" name="archivo_curp" accept=".pdf" required="falta subir la curp">                    
+                    </P>
+                    <p>
+                      <label>Acta de nacimiento</label>
+                      <input class="pdf" type="file" id="miInput2" name="archivo_acta_nacimiento" accept=".pdf" required="falta subir el acta de nacimiento">
+                    </p>
+                    <p>
+                      <label>Certiicado de primaria</label>
+                      <input type="file" name="archivo_certificado_primaria" id="miInput3" accept=".pdf" required="falta subir el certificado de primaria">
+                    </p>
+                    <p>
+                      <label>Boleta de sexto grado</label>
+                      <input type="file" name="archivo_boleta_sexto" id="miInput4" accept=".pdf" required="falta subir la boleta de sexto grado">
+                    </p>
+                    
+                   <script src="{% static 'inscripcion/javaScript.js'%}"></script>
+
+
+                         
+                    <p class="block2">
+                        <button>
+                            Cancelar
+                        </button>
+                    </p>
+                    <p class="block">
+                        <button type="submit">
+                            Siguiente
+                        </button>
+                    </p>
+                    
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+{% endblock content %}
+
+

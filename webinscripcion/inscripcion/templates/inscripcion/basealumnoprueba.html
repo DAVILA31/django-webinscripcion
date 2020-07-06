@@ -1,0 +1,27 @@
+{% extends 'core/baseEti.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="overlay">
+    <br>
+    <br>
+    <br>
+        <br>
+            <br>
+                
+        <form method="POST">
+            {% csrf_token %}
+                      
+            <input class="form-input" name="pk_alumno_curp" value="{{request.user.username}}" id="id_pk_alumno_curp" type="text" placeholder="CURP" required readonly>
+            
+            <input class="form-input" name="alumno_ap_paterno" value="{{request.user.alumno.alumno_ap_paterno}}" id="id_alumno_ap_paterno" type="text" placeholder="APELLIDO PATERNO">
+            <input class="form-input" name="alumno_ap_materno" value="{{request.user.alumno.alumno_ap_materno}}" id="id_alumno_ap_materno" type="text" placeholder="APELLIDO MATERNO">
+            <input class="form-input" name="alumno_nombre" value="{{request.user.alumno.alumno_nombre}}" id="id_alumno_nombre" type="text" placeholder="NOMBRE">
+            
+
+               <button type="submit" class="btn submits sign-up"> Grabar </button>
+        </form>
+    </div>
+{% endblock content %}
+

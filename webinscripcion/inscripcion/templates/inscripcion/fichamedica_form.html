@@ -1,0 +1,203 @@
+{% extends 'inscripcion/basea.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet"  href="{% static 'core/css/estiloalumno.css'%}">
+{% endblock head %}
+  
+{% block title %} DATOS MEDICOS GENERALES {% endblock title %} 
+
+
+{% block content %}
+
+   <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
+        <div class="container">
+          <div class="row align-items-end justify-content-center text-center">
+            <div class="col-lg-7">
+              <h2 class="mb-0">DATOS DEL ALUMNO</h2>
+              <p>Ingresar correctamente los datos que se le solicitan</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+    <div align="Center">
+      <img src="{% static 'core/images/SEV.png'%}" alt="Image" class="img-fluid">
+    </div>
+<!--INICIA EL FORMULARIO-->
+
+
+ <div class="contenido">
+
+     <h1 align="center">ESCUELA SECUNDARIA TECNICA N° 8 </h1>
+
+        <div class="contact-wrapper animated bounceInUp">
+            
+          <div class="contact-info">
+                <h4>ALUMNO</h4>
+                <p>
+                     <label>CURP</label>
+                        
+                        <input class="form-input" type="text" name="pk_curp" value="{{user.username}}" id="id_pk_curp" placeholder="CURP" required readonly>
+                                   
+                    </p>
+                     <p>
+                        <label>Nombre</label>
+                        <input class="form-input" name="curp_nombre" value="{{request.user.curp.curp_nombre}}" id="id_curp_nombre" type="text" placeholder="NOMBRE" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Paterno</label>
+                        <input class="form-input" name="curp_ap_paterno" value="{{request.user.curp.curp_ap_paterno}}" id="id_curp_ap_paterno" type="text" placeholder="APELLIDO PATERNO" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Materno</label>
+                        <input class="form-input" name="curp_ap_materno" value="{{request.user.curp.curp_ap_materno}}" id="id_curp_ap_materno" type="text" placeholder="APELLIDO MATERNO" readonly>
+                    </p>
+            </div>
+
+
+
+
+
+            <div class="contact-form">
+                <h3>DATOS MÉDICOS</h3>
+                <form method="post">
+                {% csrf_token %}
+                    <h3 align="center"> <input class="form-input" type="text" name="pk_curp" value="{{user.curp.pk_curp}}" id="id_pk_curp" placeholder="CURP" required readonly></h3>
+                    <br> <br> 
+                    <br> <br> 
+                    <p>
+                        <label for="Peso">Peso (KG)</label>
+                        <input type="text" id="id_fmedica_peso" name="fmedica_peso"  placeholder="&#35;" required>
+                    </p>
+                    
+                    <p>
+                        <label for="Talla">Altura (CM)</label>
+                        <input type="text" id="id_fmedica_talla" name="fmedica_talla" placeholder="  &#35;" required>
+                    </p>
+                     <p>
+                        <label for="cintura">Medida de cintura (CM)</label>
+                        <input type="text" id="id_fmedica_medida_cintura" name="ffmedica_medida_cintura" placeholder="  &#35;" required>
+                    </p>
+                   
+                     <p>
+                        <label for="cadera">Medida de cadera (CM) </label>
+                        <input type="text" id="id_fmedica_medida_cadera" name="fmedica_medida_cadera" placeholder="&#35;" required>
+                    </p>
+                      <p>
+                       <label for="sangre">Tipo de sangre</label>
+                        <select id="id_fmedica_tipo_sangre" align='center' autofocus='true' name="fmedica_tipo_sangre" >
+                          <option selected>....</option>
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                          <option value="A+">A+</option>
+                          <option value="A-">A-</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
+                        </select>
+                      </p>
+                     <p>
+                        <label for="sangre">Servicio medico</label>
+                        <select id="id_fmedica_servicio_medico" align='center' autofocus='true' name="fmedica_servicio_medico" >
+                          <option selected>....</option>
+                          <option value="IMSS">IMSS</option>
+                          <option value="ISSTE">ISSTE</option>
+                          <option value="ISSFAM">ISSFAMI</option>
+                          <option value="SERVICIO MEDICO DE PEMEX">PEMEX</option>
+                          <option value="SEGURO POPULAR">SEGURO POPULAR</option>
+                          <option value="SIN SEGURO">NINGUNO</option>
+                          <option value="OTRO">OTRO</option>
+                        </select>
+
+                      </p>
+                    <p>
+                       <label for="educacion">¿Educación Especial?</label>
+                    <SELECT name="fmedica_educacion_especial" onchange="if(this.value=='SI') {document.getElementById('SI').disabled = false} else {document.getElementById('SI').disabled = true}">
+                    <OPTION selected>....</OPTION>
+                    <OPTION value="NO">NO</OPTION>
+                    <OPTION value="SI">SI</OPTION>
+                    </SELECT>               
+                    </p>
+                    <p>
+                    <label for="medicamento">¿Alérgico a medicamentos?</label>
+                    <SELECT name="fmedica_es_alergico_medicamento" onchange="if(this.value=='SI') {document.getElementById('SI').disabled = false} else {document.getElementById('SI').disabled = true}">
+                      <OPTION selected>....</OPTION>
+                      <OPTION value="NO">NO</OPTION>
+                      <OPTION value="SI">SI</OPTION>
+                    </SELECT>
+                    <input class="Sexo" type="text" id="SI" name="mfmedica_cual_medicamento" placeholder="¿cual?">
+                    </p>
+
+                    <p>
+                    <label for="alimento">¿Alérgico a Alimentos?</label>
+                      <SELECT name="fmedica_es_alergico_alimento" onchange="if(this.value=='SI') {document.getElementById('SI').disabled = false} else {document.getElementById('SI').disabled = true}">
+                        <OPTION selected>....</OPTION>
+                        <OPTION value="NO">NO</OPTION>
+                        <OPTION value="SI">SI</OPTION>
+                     </SELECT>
+                    <input class="Sexo" type="text" id="SI" name="mfmedica_cual_alimento" placeholder="¿cual?">
+                    </p>
+                    <p>
+                        <label for="postura">¿Tiene algún problema de postura?</label>
+                      <SELECT name="fmedica_problema_postural" onchange="if(this.value=='SI') {document.getElementById('SI').disabled = false} else {document.getElementById('SI').disabled = true}">
+                        <OPTION selected>....</OPTION>
+                        <OPTION value="NO">NO</OPTION>
+                        <OPTION value="SI">SI</OPTION>
+                      </SELECT>
+                    
+                    </p>
+                    <p>
+                      <label for="ortopedico">¿Utiliza algún aparato ortopédico?</label>
+                      <SELECT name="fmedica_usa_aparato_ortopedico" onchange="if(this.value=='SI') {document.getElementById('SI').disabled = false} else {document.getElementById('SI').disabled = true}">
+                        <OPTION selected>....</OPTION>
+                        <OPTION value="NO">NO</OPTION>
+                        <OPTION value="SI">SI</OPTION>
+                      </SELECT>
+                   
+                    </p>
+
+
+<p>
+</p>
+
+
+                    <p class="block2">
+                        <button onClick="history.go(-1);">
+                            Volver
+                        </button>
+                    </p>
+                    <p class="block">
+                        <button type="submit">
+                            Siguiente
+                        </button>
+                    </p>
+                    
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+<div class="site-section ftco-subscribe-1" style="background-image: url('images/bg_1.jpg')">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+           <!-- <h2>Subscribe to us!</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>-->
+          </div>
+          <div class="col-lg-5">
+            <form action="" class="d-flex">
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+{% endblock content%}

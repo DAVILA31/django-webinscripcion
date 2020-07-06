@@ -1,0 +1,168 @@
+{% extends 'inscripcion/basea.html' %}
+
+{% load static %}
+  
+{% block title %} RESPONSABLE DEL ALUMNO  {% endblock title %} 
+
+
+{% block content %}
+
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
+        <div class="container">
+          <div class="row align-items-end justify-content-center text-center">
+            <div class="col-lg-7">
+              <h2 class="mb-0">DATOS DEL ALUMNO</h2>
+              <p>Ingresar correctamente los datos de los tutores que se le solicitan</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+    <div align="Center">
+      <img src="{% static 'core/images/SEV.png'%}" alt="Image" class="img-fluid">
+    </div>
+
+
+
+<!--INICIA EL FORMULARIO-->
+
+
+ <div class="contenido">
+
+     <h1 align="center">ESCUELA SECUNDARIA TECNICA N° 8 </h1>
+
+        <div class="contact-wrapper animated bounceInUp">
+            
+          <div class="contact-info">
+                <h4>ALUMNO</h4>
+                <p>
+                         <label>CURP</label>
+                        
+                        <input class="form-input" type="text" name="pk_curp" value="{{user.username}}" id="id_pk_curp" placeholder="CURP" required readonly>
+                                   
+
+                    </p>
+                     <p>
+                        <label>Nombre</label>
+                        <input class="form-input" name="curp_nombre" value="{{request.user.curp.curp_nombre}}" id="id_curp_nombre" type="text" placeholder="NOMBRE" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Paterno</label>
+                        <input class="form-input" name="curp_ap_paterno" value="{{request.user.curp.curp_ap_paterno}}" id="id_curp_ap_paterno" type="text" placeholder="APELLIDO PATERNO" readonly>
+                    </p>
+                     <p>
+                        <label>Apellido Materno</label>
+                        <input class="form-input" name="curp_ap_materno" value="{{request.user.curp.curp_ap_materno}}" id="id_curp_ap_materno" type="text" placeholder="APELLIDO MATERNO" readonly>
+                    </p>
+            </div>
+
+
+
+            <div class="contact-form">
+                <h3>DATOS DEL PADRE O TUTOR</h3>
+                <form method="post">
+                {% csrf_token %}
+                  
+                    <h3 align="center"> <input class="form-input" type="text" name="pk_curp" value="{{user.curp.pk_curp}}" id="id_pk_curp" placeholder="CURP" required readonly></h3>
+                    <br> <br> 
+                    <br> <br> 
+
+                    
+                     <p>
+                     <label for="Otro">Parentesco</label>
+                    <SELECT name="responsable_parentesco" >
+                    <OPTION selected>.....</OPTION>
+                    <OPTION value="PADRE">Padre</OPTION>
+                    <OPTION value="MADRE">Madre</OPTION>
+                    <OPTION value="ABUELO">Abuelo</OPTION>
+                    <OPTION value="ABUELA">Abuela</OPTION>
+                    <OPTION value="HERMANO">Hermano</OPTION>
+                    <OPTION value="HERMANA">Hermana</OPTION>
+                    <OPTION value="TIO">Tío</OPTION>
+                    <OPTION value="TIA">Tia</OPTION>
+                    
+                    </SELECT>
+                    </p>
+                    <p>
+                        <label>Nombre</label>
+                        <input type="text" name="responsable_nombre" placeholder="&#8962;" required>
+                    </p>
+                     <p>
+                        <label>Apellido Paterno</label>
+                        <input type="text" name="responsable_ap_paterno" placeholder="&#8962;" required>
+                    </p>
+                     <p>
+                        <label>Apellido Materno</label>
+                        <input type="text" name="responsable_ap_materno" placeholder="&#8962;" required>
+                    </p>
+                    <p>
+                        <label>Fecha de nacimiento</label>
+                      <input type="date" name="responsable_fecha_nacimiento" required>
+                    </p>
+                    <p>
+                        <label>CURP</label>
+                        {{form.pk_responsable_curp}}
+                    </p>
+
+                     <p>
+                       <label for="Otro2">Ocupacion</label>
+                    <SELECT name="responsable_ocupacion" >
+                    <OPTION selected>seleccione una opción</OPTION>
+                    <OPTION value="HOGAR">HOGAR</OPTION>
+                    <OPTION value="DESEMPLEADO">DESEMPLEADO</OPTION>
+                    <OPTION value="EMPLEADO">EMPLEADO</OPTION>
+                    <OPTION value="JUBILADO">JUBILADO</OPTION>
+                    <OPTION value="ESTUDIANTE">ESTUDIANTE</OPTION>
+                    <OPTION value="JORNALERO">JORNALERO</OPTION>
+                    <OPTION value="CUENTA PROPIA">CUENTA PROPIA</OPTION>
+                    <OPTION value="OTRO">OTRO</OPTION>
+                  
+                    </SELECT>
+                     </p>
+                     <p>
+                    <label for="responsable_nivel_estudio">Escolaridad</label>
+                    <SELECT name="responsable_nivel_estudio" >
+                    <OPTION selected>seleccione una opción</OPTION>
+                    <OPTION value="NINGUNA">NINGUNA</OPTION>
+                    <OPTION value="PRIMARIA">PRIMARIA</OPTION>
+                    <OPTION value="SECUNDARIA">SECUNDARIA</OPTION>
+                    <OPTION value="BACHILLERATO">BACHILLERATO</OPTION>
+                    <OPTION value="TECNICO">TECNICO</OPTION>
+                    <OPTION value="PROFESIONAL">PROFESIONAL</OPTION>
+                    <OPTION value="POSGRADO">POSGRADO</OPTION>
+                    
+                    </SELECT>
+                    </p>
+                     <p>
+                        <label>Teléfono</label>
+                        {{form.responsable_telefono}}
+                    </p>
+                    <datalist id="defaultEmails">
+                      <option value="@HOTMAIL.COM">
+                      <option value="@OUTLOOK.COM">
+                      <option value="@GMAIL.COM">
+                      <option value="@ICLOUD.COM">
+                     </datalist>
+
+                     <p>
+                        <label>Correo electrónico</label>
+                        {{form.responsable_correo}}
+                    </p>
+
+                      
+                    <p class="block3">
+                        <button type="submit" >
+                            AGREGAR 
+                        </button>
+                    </p>
+                   
+                    
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+
+{% endblock content %}
