@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+ 
+    font-family: 'Quicksand', sans-serif;
+   
+}
+
+.content {
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3em;
+}
+
+h1{
+font-size: 3em;
+	color:#ffffff;
+	margin-bottom: 2em;
+}
+h2{
+font-size: 2em;
+	color:#000000;
+	margin-bottom: 2em;
+}
+
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo {
+    text-align: center;
+    font-size: 3em;
+}
+
+.logo span {
+    color: #B70E21;
+}
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(141, 110, 99, 1);
+}
+
+.contact-wrapper > * {
+    padding: .5em;
+}
+
+.contact-form {
+background: #603813;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #b29f94, #603813);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #b29f94, #603813); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   
+}
+
+
+
+.contact-form form label {
+   color: #ffffff;
+    display: block;
+}
+
+.contact-form form p {
+    margin: 0;
+    padding: .5em;
+}
+
+.contact-form form .block {
+    grid-column: 1 / 3;
+}
+
+
+.contact-form form input {
+    
+    width: 20em;
+    padding: .5em;
+   border-radius: 5px;
+  color: #000000;
+    
+}
+
+.contact-form form button {
+	width: 45%;
+    color: #ffffff;
+    border-radius: 10px;
+    background: #17202A;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    background: #943126;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+/* CONTACT INFO */
+
+
+
+.contact-info {
+
+background:  #b29f94;
+
+
+}
+.contact-info label,input{
+     display: block;
+    width: 20em;
+    
+   border-radius: 5px;
+  
+    
+	color: #000000;
+}
+
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+    body {
+        padding: 0 0em;
+    }
+    .contact-wrapper {
+       
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: center;
+    }
+}
+.abs-center{
+
+	height: auto;
+max-width: 100%;
+}

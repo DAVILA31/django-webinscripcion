@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7=wv41lu=h0!zn_xm$n!3ykwvg&vwilkcuw_iamejh7=n08a!#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['secundariaeti8.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -92,8 +92,8 @@ DATABASES = {
     'default': {
      'ENGINE': 'django.db.backends.mysql',
         'NAME': 'eti',
-        'USER':'root',
-        'PASSWORD':'',
+        'USER':'administradores2',
+        'PASSWORD':'inscripcionesETI8.',
         'HOST':'localhost',
         'PORT': 3306
     }
@@ -137,16 +137,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles/')
-
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
-]
-
-
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
-LOGIN_REDIRECT_URL= 'aviso'
+LOGIN_REDIRECT_URL= 'inscripcion:alumno'
 LOGOUT_REDIRECT_URL= 'home'

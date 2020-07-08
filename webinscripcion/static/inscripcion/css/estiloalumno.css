@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  
+    font-family: 'Quicksand', sans-serif;
+   
+}
+
+.contenido {
+
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contenido h1{
+    margin-bottom: 1em;
+font-weight: bold;
+	color: #000000;
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 3em;
+}
+
+.logo span {
+    color: #922B21;
+}
+
+.contact-wrapper {
+
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-wrapper > * {
+    padding: 1em;
+}
+
+.contact-form {
+      border: 1px solid #5A3026;
+	border-radius: 10px;
+    background: none;
+    color:#000000;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.contact-form form label {
+    display: block;
+}
+
+
+
+.contact-form form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.contac-form form h3 [class="CURP"]{
+
+
+}
+
+
+
+.contact-form form .block5 {
+    display: block;
+   text-align: center;
+}
+
+
+ .contact-form form select{
+
+ 	font-size: 100%;
+    width: 100%;
+    padding: .9em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+
+ }
+
+
+
+.contact-form form input[class="Sexo"]{
+
+  width: 100%;
+    padding: 0em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 0px solid #5A3026;
+}
+
+.contac-form form label[class="radio"]{
+    text-align: center;
+}
+
+.contac-form form input[type="checkbox"]{
+margin:all;
+
+}
+
+
+
+.contact-form form input,
+.contact-form form textarea {
+   width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+}
+
+
+
+
+.contact-form form button {
+	font-size: 100%;
+	width: 100%;
+	border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(141, 110, 99, 1);
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    
+    background: #5A3026;
+    color: #ffff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+.contact-form form .block3 {
+    text-align: center;
+    grid-column: 1 / 3;
+}
+
+
+/* CONTACT INFO */
+.contact-info {
+	border-radius: 10px;
+    background: #795548;
+    color: #000000;
+}
+.contact-info label {
+    color:#ffff;
+    display: block;
+}
+
+.contact-form form .block4 {
+   width: 50%;
+    grid-column: 1 / 3;
+}
+
+
+
+
+.contact-info p {
+
+    margin: 0;
+    padding: .2em;
+}
+
+.contact-info button,
+.contact-info  input,
+.contact-info  textarea {
+
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+}
+
+
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    color:#ffff;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+    body {
+        
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+
+
+}
+
+@media(max-width: 699px) {
+
+    .contact-form form input{
+        font-size: 15px;
+   width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+}
+
+    .contact-form form select{
+
+    font-size: 57%;
+    width: 100%;
+    padding: .9em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+
+ }
+
+ .contact-form form button {
+    font-size: 80%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(141, 110, 99, 1);
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+
+}
+
+@media(max-width: 320px) {
+    .contact-form form select{
+
+    font-size: 40%;
+    width: 100%;
+    padding: .9em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+
+ }
+
+ .contact-form form button {
+    font-size: 65%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(141, 110, 99, 1);
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+.contact-form form input{
+    font-size: 12px;
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #000000;
+    border-bottom: 1px solid #5A3026;
+}
+
+
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/* CONTACT INFO */
+.contact-info {
+    border-radius: 10px;
+    background: #795548;
+    color: #000000;
+}
+
+.contact-info a{
+   color: #ffff;
+
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+    body {
+      
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+}

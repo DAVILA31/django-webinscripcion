@@ -34,7 +34,7 @@ class Curp(models.Model):
             ordering = ['user', 'curp_ap_paterno']
 
         def __str__(self):
-            return f'{self.user.username}Curp'
+            return self.pk_curp
 
 class Alumno(models.Model):
         pk_curp= models.OneToOneField(Curp, max_length=18,on_delete=models.CASCADE)

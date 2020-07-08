@@ -16,33 +16,33 @@ from xhtml2pdf import pisa
 
 # Create your views here.
 
-class AlumnoCreate(CreateView):
+class AlumnoCreate(LoginRequiredMixin,CreateView):
 	model = Alumno
 	template_name = 'inscripcion/alumno_form.html'
 	form_class = AlumnoForm
 	success_url = reverse_lazy('inscripcion:alumnogg')
 
 
-class AlumnoggCreate(CreateView):
+class AlumnoggCreate(LoginRequiredMixin,CreateView):
 	model = Alumnogg
 	template_name = 'inscripcion/alumnogg_form.html'
 	form_class = AlumnoggForm
 	success_url = reverse_lazy('inscripcion:actan')
 
 
-class ActanCreate(CreateView):
+class ActanCreate(LoginRequiredMixin,CreateView):
 	model = Acta_nacimiento
 	template_name = 'inscripcion/actan_form.html'
 	form_class = ActanForm
 	success_url = reverse_lazy('inscripcion:fmedica')
 
-class FichamedicaCreate(CreateView):
+class FichamedicaCreate(LoginRequiredMixin,CreateView):
 	model = Ficha_medica
 	template_name = 'inscripcion/fichamedica_form.html'
 	form_class = FichamedicaForm
 	success_url = reverse_lazy('inscripcion:fmdva')
 
-class FichadvaCreate(CreateView):
+class FichadvaCreate(LoginRequiredMixin,CreateView):
 	model = Ficha_medica_dental
 	second_model=Ficha_medica_auditiva
 	third_model=Ficha_medica_visual
@@ -78,20 +78,20 @@ class FichadvaCreate(CreateView):
 			return self.render_to_response(self.get_context_data(form=form, form2=form2, form3=form3))
 
 
-class TratamientoCreate(CreateView):
+class TratamientoCreate(LoginRequiredMixin,CreateView):
 	model = Alumno_bajo_tratamiento
 	template_name = 'inscripcion/alumnobajotratamiento_form.html'
 	form_class = AlumnobajotratamientoForm
 	success_url = reverse_lazy('inscripcion:discapacidad')
 
-class DiscapacidadCreate(CreateView):
+class DiscapacidadCreate(LoginRequiredMixin,CreateView):
 	model = Discapacidad
 	template_name = 'inscripcion/discapacidad_form.html'
 	form_class = DiscapacidadForm
 	success_url = reverse_lazy('inscripcion:familia')
 
 
-class FamiliaCreate(CreateView):
+class FamiliaCreate(LoginRequiredMixin,CreateView):
 	model = Aptitud_sobresaliente
 	second_model= Datos_familiares
 	third_model= Alumno_convivencia
@@ -128,20 +128,26 @@ class FamiliaCreate(CreateView):
 
 
 	
-class ResponsableCreate(CreateView):
+class ResponsableCreate(LoginRequiredMixin,CreateView):
 	model= Responsable
 	template_name = 'inscripcion/responsable_form.html'
 	form_class = ResponsableForm
 	success_url = reverse_lazy('inscripcion:tutor')
 
 
-class ArchivoCreate(CreateView):
+class ArchivoCreate(LoginRequiredMixin,CreateView):
 	model= Archivo
 	template_name = 'inscripcion/archivo_form.html'
 	form_class = ArchivoForm
-	success_url = reverse_lazy('home')
+	success_url = None
+	
+	def form_valid(self, form):
+		obj = form.save(commit=False)
+		obj.save()
+		return HttpResponseRedirect(reverse('inscripcion:pdf', kwargs={'pk': obj.pk_curp}))
 
-class SaleInvoicePdfView(View):
+
+class SaleInvoicePdfView(LoginRequiredMixin,View):
 
     def link_callback(self, uri, rel):
         """

@@ -1,11 +1,11 @@
-{% extends 'inscripcion/basea.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'core/css/doc23.css'%}">
 {% endblock head %}
 
-{% block title %} AVISO {% endblock title %}
+{% block titile %} AVISO {% endblock titile %}
 
 {% block content %}
 
@@ -25,7 +25,7 @@
       <div class="container">
         <a href="{% url 'home' %}">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <span class="current">Documentación para Reinscripción</span>
+        <span class="current">Documentación para inscripción</span>
       </div>
     </div>
 
@@ -35,9 +35,9 @@
 
         <div class="contact-wrapper animated bounceInUp">
 <div class="contact-info">
-                <h2>Segundo y Tercer grado</h2>
+                <h2>Primero, segundo y tercer grado</h2>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt"></i>Te sugerimos tener a la mano la siguiente documentación antes de iniciar el proceso de reinscripción.</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Te sugerimos tener a la mano la siguiente documentación antes de iniciar el proceso de inscripción.</li>
                     <li><i class="fas fa-envelope-open-text"></i>Si no cuentas con tu curp te sugerimos dar click en el siguiente enlace para poder descargarla</li>
                     <a href="https://www.gob.mx/curp/" target="_blank">DESCARGAR CURP</a>
                 </ul>
@@ -49,49 +49,37 @@
                 <h3>DOCUMENTACIÓN</h3>
 
 
-                <form action="{% url 'inscripcion:alumno'%}">
+                <form action="{% url 'login' %}">
 
                   <p> 
                   <h2>Acta de nacimiento actualizada</h2>
-                    </p> 
-                    <p>
-                      <h2>Curp actualizada</h2>
+                   <h2>Curp actualizada</h2>
+                   <h2>Cartilla medica (datos sobre tu salud)</h2>
                     </p>
+                    <h3>Los siguientes documentos deben ser escaneados y guardados en formato PDF para subirlos a la plataforma: (SOLO ALUMNOS PARA PRIMER GRADO)</h3>
                     <p>
-                      <h2>Cartilla médica (datos sobre tu salud)</h2>
+                      <label>Curp</label>
+                      <label>Acta nacimiento</label>
+                      <label>Certificado de primaria</label>
+                      <label>Boleta de sexto grado</label>
+                      
+                      <h4>Los documentos deben de tener un peso máximo de 512KB de lo contrario no se podrán cargar al sistema</h4>
+
                     </p>
+
+
 
                     <p class="block">
-                                <button type="submit" >
-                                    Acceder
-                                </button>
-                            </p>
-
-
+                        <button>
+                            Iniciar
+                        </button>
+                    </p>
                 </form>
             </div>
             
         </div>
 
-    </div>s
+    </div>
 
-    
-
-    <div class="site-section ftco-subscribe-1" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-           <!-- <h2>Subscribe to us!</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>-->
-          </div>
-          <div class="col-lg-5">
-            <form action="" class="d-flex">
-             <!-- <input type="text" class="rounded form-control mr-2 py-3" placeholder="Enter your email">
-              <button class="btn btn-primary rounded py-3 px-4" type="submit">Send</button>-->
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> 
 
 {% endblock content %}    

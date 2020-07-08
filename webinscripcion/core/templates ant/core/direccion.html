@@ -1,0 +1,97 @@
+{% extends 'core/baseEti.html'%}
+{% load static %}
+
+<!-- Block para el titulo de la pagina en la pestaña-->
+{% block titile %} Direccion {% endblock%}
+
+{% block content %}   
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'core/images/bg_1.jpg'%}')">
+        <div class="container">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <h2 class="mb-0">DIRECCION</h2>
+              <p>Organigrama de la institución</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+    <div class="custom-breadcrumns border-bottom">
+      <div class="container">
+        <a href="{% url 'home' %}">Home</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <a href="{% url 'direccion' %}">Sobre nosotros</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">Direccion</span>
+      </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <p>
+                        <img src="{% static 'core/images/organigrama.jpg'%}" alt="Image" class="img-fluid">
+                    </p>
+                </div>
+               <div id="main-container">
+               <table class="main-container" >
+      <thead>
+        <tr>
+          <th>DEPARTAMENTO</th><th>TITULAR</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>Dirección</td><td>PROF. JOSE FRANCISCO MARTINEZ TEJEDA</td>
+      </tr>
+      <tr>
+        <td>Subdirección turno matutino</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Subdirección turno vespertino</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Coordinador academico</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Coordinador de tecnología</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Control escolar matutino</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Control escolar vespertino</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Coordinador academico</td><td>por asignar</td>
+      </tr>
+      <tr>
+        <td>Ex Alumnos</td><td>Mtra. EDITH GARCÍA SANCHEZ</td>
+      </tr>
+      <tr>
+        <td>3er grado matutino</td><td>C. ELLEN MARÍN</td>
+      </tr>
+      <tr>
+        <td>2do grado matutino </td><td>C. ARACELI GÓMEZ</td>
+      </tr>
+      <tr>
+        <td>1er grado matutino</td><td>C. EDITH HERNÁNDEZ</td>
+      </tr>
+      <tr>
+        <td>3er grado vespertino</td><td>C. GRISSEL CASTILLO</td>
+      </tr>
+      <tr>
+        <td>2do grado vespertino</td><td>C. HÉCTOR QUEEN</td>
+      </tr>
+      <tr>
+        <td>1er grado vespertino</td><td>C. ÁNGEL VILALOBOS</td>
+      </tr>
+    </table>
+  </div>
+ 
+            </div>
+        </div>
+    </div>
+{% endblock %}
